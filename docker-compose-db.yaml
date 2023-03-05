@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  # https://hub.docker.com/r/oracleinanutshell/oracle-xe-11g
+  oracle:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    ports:
+      - 1521:1521
+      - 5500:5500
+  # https://hub.docker.com/_/mongo
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+  # https://hub.docker.com/_/postgres
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: example
