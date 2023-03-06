@@ -1,2 +1,6 @@
 rootProject.name = 'fMSA'
-
+include 'config-service'
+include 'discovery-service'
+include 'EC-service'
+include 'gateway-service'
+include 'recipe-service'
