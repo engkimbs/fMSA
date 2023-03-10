@@ -31,6 +31,12 @@ spring:
             - Path=/recipe/**
           filters:
             - RewritePath=/recipe/(?<path>.*), /$\{path}
+        - id: shared-service
+          uri: lb://shared-service
+          predicates:
+            - Path=/shared/**
+          filters:
+            - RewritePath=/shared/(?<path>.*), /$\{path}
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
@@ -45,3 +51,5 @@ springdoc:
         url: /v3/api-docs/EC
       - name: recipe
         url: /v3/api-docs/recipe
+      - name: shared
+        url: /v3/api-docs/shared
