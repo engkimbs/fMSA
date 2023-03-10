@@ -12,7 +12,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="area_mst")
+@Table(name="AREA_MST")
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
 @Getter
 public class AreaMst {
@@ -26,7 +26,7 @@ public class AreaMst {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "area_mst_sequence_generator")
-    String id;
+    Long id;
 
     String area;
 
