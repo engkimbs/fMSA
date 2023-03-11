@@ -12,4 +12,6 @@ public class AreaMstRequest {
     String area;
 
     String description;
+
+    String user;
 }

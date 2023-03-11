@@ -32,11 +32,19 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+    implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+
     compileOnly 'org.projectlombok:lombok'
+
     runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+    runtimeOnly 'org.postgresql:postgresql'
+
     annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
     testImplementation 'io.projectreactor:reactor-test'
 }
 

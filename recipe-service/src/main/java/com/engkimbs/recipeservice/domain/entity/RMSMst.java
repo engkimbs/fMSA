@@ -1,5 +1,6 @@
-package com.engkimbs.sharedservice.domain.entity;
+package com.engkimbs.recipeservice.domain.entity;
 
+import com.engkimbs.recipeservice.domain.entity.vo.RMSInterlock;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
@@ -11,28 +12,40 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="AREA_MST")
+@Table(name="RMS_MST")
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor(access= AccessLevel.PUBLIC)
 @AllArgsConstructor
 @Builder
 @Getter
-public class AreaMst {
+public class RMSMst {
 
     @Id
-    @SequenceGenerator(
-            name = "area_mst_sequence_generator",
-            sequenceName = "area_mst_sequence",
-            initialValue = 10,
-            allocationSize = 1)
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "area_mst_sequence_generator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    String line;
 
     String area;
 
-    String description;
+    String maker;
+
+    String eqpModel;
+
+    String eqpId;
+
+    String rmsModel;
+
+//    @Embedded
+//    RMSInterlock interlock;
+
+    Boolean sa;
+
+    Boolean lb;
+
+    Boolean dc;
+
+    Boolean fa;
 
     @CreatedDate
     LocalDateTime created;
@@ -57,9 +70,12 @@ public class AreaMst {
         this.lastModifiedBy = this.lastModifiedBy == null ? "SA" : this.lastModifiedBy;
     }
 
-    public void updateAreaMst(AreaMst areaMst) {
-        this.area = areaMst.getArea();
-        this.description = areaMst.getDescription();
-        this.lastModifiedBy = areaMst.getLastModifiedBy();
+    public void updateRMSMst(RMSMst rmsMst) {
+        this.line = rmsMst.getLine();
+        this.area = rmsMst.getArea();
+        this.maker = rmsMst.getMaker();
+        this.eqpModel = rmsMst.getEqpModel();
+        this.eqpId = rmsMst.getEqpId();
+        this.rmsModel = rmsMst.getRmsModel();
     }
 }

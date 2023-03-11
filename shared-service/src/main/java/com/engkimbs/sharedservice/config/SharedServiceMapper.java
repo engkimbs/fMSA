@@ -8,14 +8,13 @@ import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
-public interface AreaMstMapper {
+public interface SharedServiceMapper {
 
-    AreaMstMapper INSTANCE = Mappers.getMapper(AreaMstMapper.class);
+    SharedServiceMapper INSTANCE = Mappers.getMapper(SharedServiceMapper.class);
 
     @Mappings({
-            @Mapping(source = "id", target = "id"),
-            @Mapping(source = "area", target = "area"),
-            @Mapping(source = "description", target = "description")
+            @Mapping(source = "user", target = "createdBy"),
+            @Mapping(source = "user", target = "lastModifiedBy")
     })
     AreaMst toAreaMst(AreaMstRequest areaMstRequest);
 }

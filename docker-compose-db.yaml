@@ -28,6 +28,7 @@ services:
     image: mongo
     ports:
       - 27018:27017
+    restart: always
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: example

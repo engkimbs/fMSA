@@ -1,7 +1,7 @@
 package com.engkimbs.sharedservice.api;
 
 import com.engkimbs.sharedservice.api.dto.AreaMstRequest;
-import com.engkimbs.sharedservice.config.AreaMstMapper;
+import com.engkimbs.sharedservice.config.SharedServiceMapper;
 import com.engkimbs.sharedservice.domain.entity.AreaMst;
 import com.engkimbs.sharedservice.service.command.SharedCommandService;
 import com.engkimbs.sharedservice.service.query.SharedQueryService;
@@ -29,12 +29,12 @@ public class SharedServiceRestApi {
 
     @PostMapping("/shared/save")
     public AreaMst saveAreaMst(@RequestBody AreaMstRequest areaMstRequest) {
-        return sharedCommandService.saveAreaMst(AreaMstMapper.INSTANCE.toAreaMst(areaMstRequest));
+        return sharedCommandService.saveAreaMst(SharedServiceMapper.INSTANCE.toAreaMst(areaMstRequest));
     }
 
     @PutMapping("/shared/update")
     public AreaMst updateAreaMst(@RequestBody AreaMstRequest areaMstRequest) {
-        return sharedCommandService.updateAreaMst(AreaMstMapper.INSTANCE.toAreaMst(areaMstRequest));
+        return sharedCommandService.updateAreaMst(SharedServiceMapper.INSTANCE.toAreaMst(areaMstRequest));
     }
 
     @DeleteMapping("shared/{id}")
