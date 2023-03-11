@@ -27,4 +27,9 @@ public class SharedCommandService {
         fetchedAreaMst.ifPresent(fetched -> fetched.updateAreaMst(areaMst));
         return areaMst;
     }
+
+    @Transactional
+    public void deleteAreaMstById(Long id) {
+        sharedServiceRDBRepository.deleteById(id);
+    }
 }
