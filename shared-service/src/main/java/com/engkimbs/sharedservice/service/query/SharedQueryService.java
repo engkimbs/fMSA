@@ -1,19 +1,19 @@
 package com.engkimbs.sharedservice.service.query;
 
 import com.engkimbs.sharedservice.domain.entity.AreaMst;
-import com.engkimbs.sharedservice.infra.db.SharedServiceRepository;
+import com.engkimbs.sharedservice.infra.db.SharedServiceRDBRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SharedQueryService {
 
-    SharedServiceRepository sharedServiceRepository;
+    SharedServiceRDBRepository sharedServiceRDBRepository;
 
-    public SharedQueryService(SharedServiceRepository sharedServiceRepository) {
-        this.sharedServiceRepository = sharedServiceRepository;
+    public SharedQueryService(SharedServiceRDBRepository sharedServiceRDBRepository) {
+        this.sharedServiceRDBRepository = sharedServiceRDBRepository;
     }
 
     public AreaMst getAreaMstById(Long id) {
-        return sharedServiceRepository.findById(id).orElse(null);
+        return sharedServiceRDBRepository.findById(id).orElse(null);
     }
 }

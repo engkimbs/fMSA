@@ -4,3 +4,6 @@ include 'discovery-service'
 include 'EC-service'
 include 'gateway-service'
 include 'recipe-service'
+include 'common'
+include 'util'
+

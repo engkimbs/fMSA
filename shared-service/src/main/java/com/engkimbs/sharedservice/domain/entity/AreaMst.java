@@ -1,19 +1,21 @@
 package com.engkimbs.sharedservice.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="AREA_MST")
-@NoArgsConstructor(access= AccessLevel.PROTECTED)
+@EntityListeners(AuditingEntityListener.class)
+@NoArgsConstructor(access= AccessLevel.PUBLIC)
+@AllArgsConstructor
+@Builder
 @Getter
 public class AreaMst {
 
@@ -21,7 +23,7 @@ public class AreaMst {
     @SequenceGenerator(
             name = "area_mst_sequence_generator",
             sequenceName = "area_mst_sequence",
-            initialValue = 1,
+            initialValue = 10,
             allocationSize = 1)
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -43,4 +45,10 @@ public class AreaMst {
 
     @LastModifiedBy
     String lastModifiedBy;
+
+    public AreaMst updateAreaMst(AreaMst areaMst) {
+        this.area = areaMst.getArea();
+        this.description = areaMst.getDescription();
+        return this;
+    }
 }
