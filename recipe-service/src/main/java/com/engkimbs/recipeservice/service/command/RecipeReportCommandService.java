@@ -16,8 +16,4 @@ public class RecipeReportCommandService {
     public RMSHistory saveRMSHistory(RMSHistory rmsHistory) {
         return recipeServiceMongoRepository.save(rmsHistory);
     }
-
-    public RMSHistory getRMSHistoryById(Long id) {
-        return recipeServiceMongoRepository.findById(id).orElse(null);
-    }
 }
