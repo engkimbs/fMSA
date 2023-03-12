@@ -8,6 +8,8 @@ import lombok.Getter;
 @Builder
 public class RMSMstRequest {
 
+    Long id;
+
     String line;
 
     String area;

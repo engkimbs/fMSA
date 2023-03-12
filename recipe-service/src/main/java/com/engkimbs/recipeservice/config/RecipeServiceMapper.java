@@ -15,16 +15,10 @@ public interface RecipeServiceMapper {
     RecipeServiceMapper INSTANCE = Mappers.getMapper(RecipeServiceMapper.class);
 
     @Mappings({
-//            @Mapping(source = "line", target = "line"),
-//            @Mapping(source = "area", target = "area"),
-//            @Mapping(source = "maker", target = "maker"),
-//            @Mapping(source = "eqpModel", target = "eqpModel"),
-//            @Mapping(source = "eqpId", target = "eqpId"),
-//            @Mapping(source = "rmsModel", target = "rmsModel"),
-//            @Mapping(source = "sa", target = "sa"),
-//            @Mapping(source = "lb", target = "lb"),
-//            @Mapping(source = "dc", target = "dc"),
-//            @Mapping(source = "fa", target = "fa"),
+            @Mapping(source = "sa", target = "interlock.sa"),
+            @Mapping(source = "lb", target = "interlock.lb"),
+            @Mapping(source = "dc", target = "interlock.dc"),
+            @Mapping(source = "fa", target = "interlock.fa"),
             @Mapping(source = "user", target = "createdBy"),
             @Mapping(source = "user", target = "lastModifiedBy")
     })

@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class RMSInterlock {
 
-    Boolean SA;
+    Boolean sa;
 
-    Boolean LB;
+    Boolean lb;
 
-    Boolean DC;
+    Boolean dc;
 
-    Boolean FA;
+    Boolean fa;
 }

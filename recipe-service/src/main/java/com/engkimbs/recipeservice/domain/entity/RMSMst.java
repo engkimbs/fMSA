@@ -36,16 +36,8 @@ public class RMSMst {
 
     String rmsModel;
 
-//    @Embedded
-//    RMSInterlock interlock;
-
-    Boolean sa;
-
-    Boolean lb;
-
-    Boolean dc;
-
-    Boolean fa;
+    @Embedded
+    RMSInterlock interlock;
 
     @CreatedDate
     LocalDateTime created;
