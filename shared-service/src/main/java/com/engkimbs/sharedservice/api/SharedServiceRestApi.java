@@ -37,7 +37,7 @@ public class SharedServiceRestApi {
         return sharedCommandService.updateAreaMst(SharedServiceMapper.INSTANCE.toAreaMst(areaMstRequest));
     }
 
-    @DeleteMapping("shared/{id}")
+    @DeleteMapping("/shared/{id}")
     public void deleteAreaMst(@PathVariable Long id) {
         sharedCommandService.deleteAreaMstById(id);
     }

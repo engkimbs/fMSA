@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class SharedCommandService {
 
     SharedServiceRDBRepository sharedServiceRDBRepository;
@@ -16,19 +17,16 @@ public class SharedCommandService {
         this.sharedServiceRDBRepository = sharedServiceRDBRepository;
     }
 
-    @Transactional
     public AreaMst saveAreaMst(final AreaMst areaMst) {
         return sharedServiceRDBRepository.save(areaMst);
     }
 
-    @Transactional
     public AreaMst updateAreaMst(final AreaMst areaMst) {
         Optional<AreaMst> fetchedAreaMst = sharedServiceRDBRepository.findById(areaMst.getId());
         fetchedAreaMst.ifPresent(fetched -> fetched.updateAreaMst(areaMst));
         return areaMst;
     }
 
-    @Transactional
     public void deleteAreaMstById(Long id) {
         sharedServiceRDBRepository.deleteById(id);
     }

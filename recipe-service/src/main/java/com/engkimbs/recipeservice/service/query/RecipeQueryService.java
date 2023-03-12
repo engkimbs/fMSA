@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional(readOnly = true)
 public class RecipeQueryService {
 
     RecipeServiceRDBRepository recipeServiceRDBRepository;
@@ -14,7 +15,6 @@ public class RecipeQueryService {
         this.recipeServiceRDBRepository = recipeServiceRDBRepository;
     }
 
-    @Transactional(readOnly = true)
     public RMSMst getRMSMstById(Long id) {
         return recipeServiceRDBRepository.findById(id).orElse(null);
     }

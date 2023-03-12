@@ -31,4 +31,14 @@ public class RecipeRestApi {
     public RMSMst saveRmsMst(@RequestBody RMSMstRequest rmsMstRequest) {
         return recipeCommandService.saveRMSMst(RecipeServiceMapper.INSTANCE.toRMSMst(rmsMstRequest));
     }
+
+    @PutMapping("/recipe/update")
+    public RMSMst updateRMSMst(@RequestBody RMSMstRequest rmsMstRequest) {
+        return recipeCommandService.updateRMSMst(RecipeServiceMapper.INSTANCE.toRMSMst(rmsMstRequest));
+    }
+
+    @DeleteMapping("/recipe/{id}")
+    public void deleteRMSMst(@PathVariable("id") Long id) {
+        recipeCommandService.deleteRMSMst(id);
+    }
 }

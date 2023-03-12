@@ -10,15 +10,15 @@ spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
     url: jdbc:oracle:thin:@localhost:1521:xe
-    username: equipment
-    password: equipment
+    username: factory
+    password: factory
   jpa:
     hibernate:
       ddl-auto: create
     generate-ddl: false
     show-sql: true
     database: oracle
-    database-platform: org.hibernate.dialect.Oracle10gDialect
+#    database-platform: org.hibernate.dialect.Oracle10gDialect
     defer-datasource-initialization: true
   sql:
     init:

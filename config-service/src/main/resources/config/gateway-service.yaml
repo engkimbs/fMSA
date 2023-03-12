@@ -15,17 +15,6 @@ logging:
 spring:
   cloud:
     gateway:
-#      globalcors:
-#        cors-configurations:
-#          '[/**]':
-#            allowedOrigins: '*'
-#            allowedHeaders: '*'
-#            allowedMethods: '*'
-#              - PUT
-#              - GET
-#              - POST
-#              - DELETE
-#              - OPTIONS
       discovery:
         locator:
           enabled: true

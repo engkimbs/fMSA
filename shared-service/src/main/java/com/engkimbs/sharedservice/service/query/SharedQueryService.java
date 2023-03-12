@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional(readOnly = true)
 public class SharedQueryService {
 
     SharedServiceRDBRepository sharedServiceRDBRepository;
@@ -14,7 +15,6 @@ public class SharedQueryService {
         this.sharedServiceRDBRepository = sharedServiceRDBRepository;
     }
 
-    @Transactional(readOnly = true)
     public AreaMst getAreaMstById(Long id) {
         return sharedServiceRDBRepository.findById(id).orElse(null);
     }
